@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true, 
-  publicPath: process.env.NODE_ENV === 'production' ? '/Gestion_Pedidos/' : '/'
+  publicPath: '/Gestion_Pedidos/', // Cambia "Gestion_Pedidos" por el nombre de tu repositorio
 })
