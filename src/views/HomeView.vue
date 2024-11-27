@@ -11,20 +11,35 @@
     <div v-if="mostrarFormulario" class="form-container">
       <h2>Nuevo Pedido</h2>
       <form @submit.prevent="agregarPedido">
-        <label for="camal">Camal:</label>
-        <input id="camal" v-model="nuevoPedido.camal" type="text" placeholder="Ingrese el camal" required />
-
         <label for="nombreCliente">Nombre Cliente:</label>
-        <input id="nombreCliente" v-model="nuevoPedido.nombreCliente" type="text" placeholder="Nombre del Cliente" required />
+        <input
+          id="nombreCliente"
+          v-model="nuevoPedido.nombreCliente"
+          type="text"
+          placeholder="Nombre del Cliente"
+          required
+        />
 
         <label for="id">ID:</label>
-        <input id="id" v-model="nuevoPedido.id" type="number" placeholder="ID del Pedido" required />
+        <input
+          id="id"
+          v-model="nuevoPedido.id"
+          type="number"
+          placeholder="ID del Pedido"
+          required
+        />
 
         <label for="fecha">Fecha:</label>
         <input id="fecha" v-model="nuevoPedido.fecha" type="date" required />
 
         <label for="peso">Peso:</label>
-        <input id="peso" v-model="nuevoPedido.peso" type="number" placeholder="Peso (kg)" required />
+        <input
+          id="peso"
+          v-model="nuevoPedido.peso"
+          type="number"
+          placeholder="Peso (kg)"
+          required
+        />
 
         <button class="submit-btn" type="submit">Añadir Pedido</button>
       </form>
@@ -67,7 +82,6 @@ export default {
     return {
       mostrarFormulario: false,
       nuevoPedido: {
-        camal: "",
         nombreCliente: "",
         id: "",
         fecha: "",
@@ -86,7 +100,6 @@ export default {
     agregarPedido() {
       this.pedidos.push({ ...this.nuevoPedido });
       this.nuevoPedido = {
-        camal: "",
         nombreCliente: "",
         id: "",
         fecha: "",
@@ -120,6 +133,7 @@ header {
 header h1 {
   font-size: 1.5rem;
   color: #2c3e50;
+  margin-bottom: 10px;
 }
 header .add-btn {
   background-color: #4caf50;
@@ -128,6 +142,7 @@ header .add-btn {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 header .add-btn:hover {
   background-color: #45a049;
@@ -144,10 +159,14 @@ header .add-btn:hover {
 .form-container h2 {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
 }
 .form-container label {
   display: block;
   margin: 10px 0 5px;
+  font-size: 0.9rem;
+  color: #555;
 }
 .form-container input {
   width: calc(100% - 20px);
@@ -155,6 +174,7 @@ header .add-btn:hover {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 0.9rem;
 }
 .form-container .submit-btn {
   background-color: #4caf50;
@@ -163,6 +183,7 @@ header .add-btn:hover {
   border: none;
   border-radius: 5px;
   width: 100%;
+  font-size: 1rem;
   cursor: pointer;
 }
 .form-container .submit-btn:hover {
@@ -174,6 +195,7 @@ header .add-btn:hover {
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
+  margin-top: 20px;
 }
 .fecha-seccion {
   margin-bottom: 20px;
@@ -207,10 +229,14 @@ header .add-btn:hover {
 .procesar-btn {
   background-color: #008cba;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border: none;
   border-radius: 5px;
+  font-size: 0.9rem;
   cursor: pointer;
+  text-align: center;
+  margin-top: 5px;
+  width: 100%;
 }
 .procesar-btn:hover {
   background-color: #007bb5;
